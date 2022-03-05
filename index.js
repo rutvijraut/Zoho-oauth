@@ -3,14 +3,14 @@ const axios = require('axios');
 const express = require('express');
 const client_id= process.env.ZOHO_CLIENT_ID
 const client_secret= process.env.ZOHO_SECRET
-// const path = require('path');
+const path = require('path');
 
 const app = express();
 
 app.use(express.static('static'));
 
 app.get('/', (req, res) => {
-  res.sendFile('C:/Users/imrut/zoho-oauth/public/index.html');
+  res.sendFile(path.join(__dirname, '/index.html'));
 });
 
 app.get('/user', (req, res) => {
